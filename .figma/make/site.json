@@ -1,0 +1,11 @@
+{
+  "title": "BearTracks",
+  "description": "Streamline campus navigation for UC Berkeley students with an all-in-one app featuring interactive maps, easy access to resources, and support.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

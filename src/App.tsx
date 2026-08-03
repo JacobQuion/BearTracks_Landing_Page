@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: 'Who is this app for?',
-    a: "BearTracks is perfect for students, faculty, tourists, and anyone who's on the UC Berkeley campus.",
+    a: "BearTracks is perfect for students, faculty, tourists, and anyone who's at UC Berkeley.",
   },
   {
     q: 'Where does the data come from?',
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Aren't there already apps for this?",
-    a: "Yes, OskiEats and Berkeley Mobile to name a few. It's unfortunate these apps are filled with bugs and maintained once in a blue moon.",
+    a: "Yes, Oski Eats and Berkeley Mobile to name a few. It's a shame these apps are filled with bugs and updated once in a blue moon.",
   },
   {
     q: 'How do I contact support?',
@@ -110,7 +110,7 @@ function FeatureItem({ label, body, delay }: { label: string; body: string; dela
   const { ref, inView } = useInView(0.15)
   return (
     <div ref={ref} style={{ transition: `opacity 0.6s ${delay}ms, transform 0.6s ${delay}ms`, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)' }}>
-      <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', color: NAVY_MID, marginBottom: 8, fontFamily: "'DM Sans', sans-serif" }}>
+      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: NAVY, marginBottom: 8, fontFamily: "'DM Sans', sans-serif" }}>
         {label}
       </p>
       <p style={{ fontSize: 17, lineHeight: 1.7, color: NAVY, fontFamily: "'DM Sans', system-ui, sans-serif" }}>
@@ -214,7 +214,7 @@ const featuresInView = useInView(0.05)
             Navigate Cal.<br />All on One App.
           </h1>
           <p style={{ fontSize: 18, lineHeight: 1.75, color: NAVY_LIGHT, maxWidth: 480, margin: '0 auto 40px' }}>
-            BearTracks finds the best dining halls, study spots, and campus happenings, all at your fingertips.
+            BearTracks finds the best dining halls, study spots, and campus events, all at your fingertips.
           </p>
           <div id="download" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12, flexWrap: 'nowrap' }}>
             <a
@@ -234,7 +234,7 @@ const featuresInView = useInView(0.05)
                 <path d="M21.54 2.5a2.76 2.76 0 00-1.94-1.96C18.0.09 11 .09 11 .09S4 .09 2.4.54A2.76 2.76 0 00.46 2.5C0 4.12 0 7.5 0 7.5s0 3.38.46 5a2.76 2.76 0 001.94 1.96C4 15 11 15 11 15s7 0 8.6-.54a2.76 2.76 0 001.94-1.96C22 10.88 22 7.5 22 7.5s0-3.38-.46-5z" fill="#FF0000"/>
                 <path d="M8.75 10.71V4.29L14.5 7.5l-5.75 3.21z" fill="#fff"/>
               </svg>
-              {isMobile ? 'Demo' : 'Video Demo'}
+              {isMobile ? 'Demo' : 'Demo Video'}
             </a>
             <a
               href="#"

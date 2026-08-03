@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import campusMap from '@/imports/image.png'
 import appGif from '@/imports/ScreenRecording2026-08-02at11.20.05AM-ezgif.com-video-to-gif-converter.gif'
+import appLogo from '@/imports/image-8.png'
 
 const NAVY = '#002244'
 const NAVY_MID = '#003262'
@@ -39,11 +40,11 @@ const faqs = [
   },
   {
     q: "Aren't there already apps for this?",
-    a: "Yes, Oski Eats and Berkeley Mobile to name a few. It's a shame these apps are filled with bugs and updated once in a blue moon.",
+    a: "Yes, Oski Eats and Berkeley Mobile to name a few. It's unfortunate these apps are filled with bugs and are updated once in a blue moon.",
   },
   {
     q: 'How do I contact support?',
-    a: "Email jacobquion@berkeley.edu for improvement suggestions and bug fixes. I'll get back to you within 1-2 business days.",
+    a: "Email jacobquion@berkeley.edu for improvement suggestions and bug fixes. I'll get back to you within 1-2 business days. If you like the app, please leave a review on the App Store!",
   },
 ]
 
@@ -56,7 +57,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '20px 0', textAlign: 'left' }}
       >
         <span style={{
-          fontFamily: "'Fraunces', Georgia, serif",
+          fontFamily: "'DM Sans', system-ui, sans-serif",
           fontSize: 18, fontWeight: 600, lineHeight: 1.3,
           color: open ? NAVY : NAVY_MID,
           transition: 'color 0.2s',
@@ -110,7 +111,7 @@ function FeatureItem({ label, body, delay }: { label: string; body: string; dela
   const { ref, inView } = useInView(0.15)
   return (
     <div ref={ref} style={{ transition: `opacity 0.6s ${delay}ms, transform 0.6s ${delay}ms`, opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(24px)' }}>
-      <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: NAVY, marginBottom: 8, fontFamily: "'DM Sans', sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: NAVY, marginBottom: 8, fontFamily: "'DM Sans', sans-serif" }}>
         {label}
       </p>
       <p style={{ fontSize: 17, lineHeight: 1.7, color: NAVY, fontFamily: "'DM Sans', system-ui, sans-serif" }}>
@@ -193,19 +194,21 @@ const featuresInView = useInView(0.05)
         borderBottom: `1px solid ${NAVY_BORDER}`,
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 22 }}>🐻</span>
-            <span style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, fontSize: 18, letterSpacing: '-0.02em', color: NAVY }}>BearTracks</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 28 }}>
+            <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+              <img src={appLogo} alt="BearTracks logo" style={{ width: 36, height: 36, borderRadius: 8, objectFit: 'cover' }} />
+              <span style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontWeight: 700, fontSize: 18, letterSpacing: '-0.02em', color: NAVY }}>BearTracks</span>
+            </a>
           </div>
         </div>
       </nav>
 
       {/* SECTION 1: HERO */}
-      <section style={{ position: 'relative', paddingTop: 60, overflow: 'hidden', background: '#fff' }}>
+      <section id="hero" style={{ position: 'relative', paddingTop: 60, overflow: 'hidden', background: '#fff' }}>
         {/* Centered copy */}
         <div style={{ textAlign: 'center', padding: '100px 32px 64px', position: 'relative', zIndex: 2 }}>
           <h1 style={{
-            fontFamily: "'Fraunces', Georgia, serif",
+            fontFamily: "'DM Sans', system-ui, sans-serif",
             fontSize: 'clamp(44px, 6vw, 80px)',
             fontWeight: 700, lineHeight: 1.05,
             letterSpacing: '-0.03em', color: NAVY,
@@ -272,7 +275,7 @@ const featuresInView = useInView(0.05)
       </section>
 
       {/* SECTION 2: FEATURES */}
-      <section style={{ padding: isMobile ? '60px 20px' : '120px 32px', background: '#fff' }}>
+      <section id="features" style={{ padding: isMobile ? '60px 20px' : '120px 32px', background: '#fff' }}>
         <div
           ref={featuresInView.ref}
           style={{
@@ -292,7 +295,7 @@ const featuresInView = useInView(0.05)
             </div>
           </div>
           <div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, letterSpacing: '-0.025em', color: NAVY, marginBottom: 48, lineHeight: 1.15 }}>
+            <h2 style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, letterSpacing: '-0.025em', color: NAVY, marginBottom: 48, lineHeight: 1.15 }}>
               Stop using 10 websites.<br /><em style={{ fontStyle: 'italic', color: '#FDB515' }}>Use BearTracks.</em>
             </h2>
             <FeatureList />
@@ -301,12 +304,12 @@ const featuresInView = useInView(0.05)
       </section>
 
       {/* SECTION 3: FAQ */}
-      <section style={{ padding: '120px 32px 160px', background: '#f7f9fc' }}>
+      <section id="faqs" style={{ padding: '120px 32px 160px', background: '#f7f9fc' }}>
         <div
           ref={faqInView.ref}
           style={{ maxWidth: 720, margin: '0 auto', transition: 'opacity 0.7s, transform 0.7s', opacity: faqInView.inView ? 1 : 0, transform: faqInView.inView ? 'translateY(0)' : 'translateY(32px)' }}
         >
-          <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 700, letterSpacing: '-0.025em', textAlign: 'center', color: NAVY, marginBottom: 56, lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 700, letterSpacing: '-0.025em', textAlign: 'center', color: NAVY, marginBottom: 56, lineHeight: 1.15 }}>
             Frequently Asked Questions
           </h2>
           <div style={{ border: `1px solid ${NAVY_BORDER}`, borderRadius: 16, padding: '0 32px', background: '#fff', boxShadow: '0 4px 24px rgba(0,34,68,0.06)' }}>

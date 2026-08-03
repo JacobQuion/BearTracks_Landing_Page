@@ -1,8 +1,12 @@
 {
   "title": "BearTracks",
-  "description": "Streamline campus navigation for UC Berkeley students with an all-in-one app featuring interactive maps, easy access to resources, and support.",
-  "robots": {
-    "index": false
+  "description": "BearTracks finds the best dining halls, study spots, and campus events, all at your fingertips.",
+  "language": "en",
+  "icons": {
+    "icon": "/.figma/make/favicon.png"
+  },
+  "openGraph": {
+    "image": "/.figma/make/social-image.png"
   },
   "accessibility": {
     "addBypassLinks": false,
